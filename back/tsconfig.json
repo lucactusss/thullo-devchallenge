@@ -1,0 +1,21 @@
+{
+  "include": ["./"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "rootDir": "./",
+    "outDir": "./build",
+    "esModuleInterop": true,
+    "strict": true,
+    "typeRoots": ["./types", "./node_modules/@types"],
+    "types": ["jest", "node"]
+  },
+  "typedocOptions": {
+    "name": "Backend documentation",
+    "entryPoints": ["./"],
+    "highlightTheme": "dark-plus",
+    "out": "generated/typedoc",
+    "excludeTags": ["apidefine"]
+  }
+}

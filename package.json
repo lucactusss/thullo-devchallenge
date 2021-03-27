@@ -1,0 +1,41 @@
+{
+  "name": "ngshop",
+  "version": "0.0.1",
+  "description": "ngshop main project",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucactusss/ngShop.git"
+  },
+  "keywords": [
+    "ngshop",
+    "shop",
+    "angular",
+    "node",
+    "typescript",
+    "mongo",
+    "docker"
+  ],
+  "author": "Lucas Martin-Chabalier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucactusss/ngShop/issues"
+  },
+  "homepage": "https://github.com/lucactusss/ngShop#readme",
+  "scripts": {
+    "lint": "lerna run lint --stream",
+    "test": "lerna run test --stream",
+    "start": "lerna run start --stream"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lerna": "^3.20.2",
+    "@commitlint/cli": "8.3.5",
+    "@commitlint/config-conventional": "8.3.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lerna run --concurrency 1 --stream precommit",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}

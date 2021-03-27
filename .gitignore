@@ -1,0 +1,13 @@
+# vscode folder
+.history
+
+# JS specific folders
+node_modules/
+yarn.lock
+package-lock.json
+build/
+dist/
+coverage/
+
+# Backend specific folders
+back/generated/
