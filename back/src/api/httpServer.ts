@@ -1,10 +1,15 @@
 import cors from 'cors';
 import express, { Request, Response } from 'express';
 import loggerMiddleware from '../infra/middlewares/loggerMiddleware';
+import authMiddleware from '../infra/middlewares/authMiddleware';
+import errorMiddleware from '../infra/middlewares/errorMiddleware';
+import userController from './controllers/userController';
 
 const server = express();
 
 server.use(cors());
+server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
 server.use(loggerMiddleware);
 
 /**
@@ -31,5 +36,10 @@ server.get('/', (req: Request, resp: Response) => {
     text: 'Express + TypeScript Server',
   });
 });
+
+server.post('/user/create', authMiddleware.optional, userController.createUser);
+server.post('/user/login', authMiddleware.optional, userController.loginUser);
+
+server.use(errorMiddleware);
 
 export default server;

@@ -12,7 +12,7 @@ services:
     image: mongo:4.2
     container_name: mongo-database
     environment:
-      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE:-myShop}
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE:-thullo}
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME:-admin}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD:-#10D}
     volumes:

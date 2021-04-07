@@ -1,10 +1,10 @@
 {
-  "name": "ngshop",
+  "name": "thullo",
   "version": "0.0.1",
-  "description": "ngshop main project",
+  "description": "thullo main project",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lucactusss/ngShop.git"
+    "url": "git+https://github.com/lucactusss/thullo-devchallenge.git"
   },
   "keywords": [
     "ngshop",
@@ -18,9 +18,9 @@
   "author": "Lucas Martin-Chabalier",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lucactusss/ngShop/issues"
+    "url": "https://github.com/lucactusss/thullo-devchallenge/issues"
   },
-  "homepage": "https://github.com/lucactusss/ngShop#readme",
+  "homepage": "https://github.com/lucactusss/thullo-devchallenge#readme",
   "scripts": {
     "lint": "lerna run lint --stream",
     "test": "lerna run test --stream",

@@ -2,13 +2,15 @@
   "include": ["./"],
   "exclude": ["node_modules"],
   "compilerOptions": {
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
     "target": "es6",
     "module": "commonjs",
     "rootDir": "./",
     "outDir": "./build",
     "esModuleInterop": true,
     "strict": true,
-    "typeRoots": ["./types", "./node_modules/@types"],
+    "typeRoots": ["./src/types", "./node_modules/@types"],
     "types": ["jest", "node"]
   },
   "typedocOptions": {

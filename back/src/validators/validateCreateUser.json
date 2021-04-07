@@ -1,0 +1,10 @@
+{
+  "id": "/CreateUser",
+  "type": "object",
+  "properties": {
+    "userName": {"type": "string"},
+    "password": {"type": "string"},
+    "email": {"type": "string"}
+  },
+  "required": ["userName", "password", "email"]
+}

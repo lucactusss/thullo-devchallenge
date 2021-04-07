@@ -1,7 +1,12 @@
 import React from 'react';
+import { StyledHeader } from './Header.styled';
 
 const Header: React.FC = () => {
-  return <div className="font-bold">HeaderBar</div>;
+  return (
+    <StyledHeader>
+      <div>Thullo</div>
+    </StyledHeader>
+  );
 };
 
 export default Header;

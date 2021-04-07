@@ -8,7 +8,7 @@ export class Context {
 
   constructor() {
     this._logger = Pino({
-      name: 'myShop',
+      name: 'thullo',
       prettyPrint: {
         colorize: true,
         translateTime: true,
