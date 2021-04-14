@@ -1,17 +1,13 @@
-import httpServer from './api/httpServer';
-import mongoose from 'mongoose';
 import { configuration } from './configuration';
 import { Context } from './infra/logging/Context';
 import { emoji } from 'node-emoji';
+import HttpServer from './api/httpServer';
+import UserController from './api/controllers/userController';
 
 const PORT = 4003;
 
 const emojiToShow =
   configuration.ENVIRONMENT === 'prod' ? emoji.coffee : emoji.gear;
-
-//Configure Mongoose
-mongoose.connect(configuration.MONGODB.MONGODB_URI, { useNewUrlParser: true });
-mongoose.set('debug', true);
 
 const rootContext = new Context();
 
@@ -28,6 +24,6 @@ process.on('unhandledRejection', (error: Error) => {
   process.exit(1);
 });
 
-httpServer.listen(PORT, () => {
-  console.log(`${emojiToShow}  Thullo backend is running at port ${PORT}`);
-});
+const httpServer = new HttpServer([new UserController()], PORT);
+
+httpServer.listen(rootContext, emojiToShow);
