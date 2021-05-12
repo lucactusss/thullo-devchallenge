@@ -1,0 +1,16 @@
+{
+  "id": "/CreateKeyword",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "label",
+    "color"
+  ]
+}

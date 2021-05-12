@@ -1,0 +1,20 @@
+{
+  "id": "/GetKeywordList",
+  "type": "object",
+  "properties": {
+    "filterText": {
+      "type": "string"
+    },
+    "pageNumber": {
+      "type": "number"
+    },
+    "pageSize": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "filterText",
+    "pageNumber",
+    "pageSize"
+  ]
+}

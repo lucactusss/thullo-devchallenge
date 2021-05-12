@@ -1,10 +1,10 @@
 {
-  "name": "myShop backend API documentation",
+  "name": "Bookmarker backend API documentation",
   "version": "0.0.1",
-  "description": "myShop backend API documentation",
-  "title": "MyShop backend API",
-  "url": "http://localhost:8000",
-  "sampleUrl": "http://localhost:8000",
+  "description": "Bookmarker backend API documentation",
+  "title": "Bookmarker backend API",
+  "url": "http://localhost:4003",
+  "sampleUrl": "http://localhost:4003",
   "template": {
   	"withCompare": true,
   	"withGenerator": true

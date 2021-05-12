@@ -1,0 +1,20 @@
+{
+  "id": "/CreateLink",
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string"
+    },
+    "linkType": {
+      "type": "string",
+      "enum": [
+        "PHOTO",
+        "VIDEO"
+      ]
+    }
+  },
+  "required": [
+    "url",
+    "linkType"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "/GetLinkList",
+  "type": "object",
+  "properties": {
+    "pageNumber": {
+      "type": "number"
+    },
+    "pageSize": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "pageNumber",
+    "pageSize"
+  ]
+}

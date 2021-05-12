@@ -1,0 +1,20 @@
+{
+  "id": "/UpdateKeyword",
+  "type": "object",
+  "properties": {
+    "keywordId": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "keywordId",
+    "label",
+    "color"
+  ]
+}

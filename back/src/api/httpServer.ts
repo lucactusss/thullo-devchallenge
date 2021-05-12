@@ -2,10 +2,11 @@ import cors from 'cors';
 import express, { Request, Response } from 'express';
 import mongoose from 'mongoose';
 import { IController } from '../models/api/IController';
-import loggerMiddleware from '../infra/middlewares/loggerMiddleware';
-import errorMiddleware from '../infra/middlewares/errorMiddleware';
+import loggerMiddleware from '../infra/middlewares/logger.middleware';
+import errorMiddleware from '../infra/middlewares/error.middleware';
 import { Context } from '../infra/logging/Context';
 import { configuration } from '../configuration';
+import cookieParser from 'cookie-parser';
 
 /**
  * Base class for express application
@@ -30,6 +31,7 @@ class HttpServer {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(loggerMiddleware);
+    this.app.use(cookieParser());
   }
 
   private initHealthCheck(): void {
@@ -73,6 +75,7 @@ class HttpServer {
     //Configure Mongoose
     mongoose.connect(configuration.MONGODB.MONGODB_URI, {
       useNewUrlParser: true,
+      useUnifiedTopology: true,
     });
     mongoose.set('debug', true);
   }

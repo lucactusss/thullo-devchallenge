@@ -1,22 +1,22 @@
 import React from 'react';
-import { HashRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import './App.css';
 import Header from './components/header/Header';
+import MainGrid from './components/LinksGrid/MainGrid';
 import { GlobalStyles } from './globalStyle';
-import MainRoutes from './routes/MainRoutes';
-import { theme } from './theme';
+import { useDarkMode } from './hooks/useDarkMode';
+import { darkTheme, lightTheme } from './theme';
 
 const App: React.FC = () => {
+  const [theme, themeToggler] = useDarkMode();
+
+  const themeMode = theme === 'light' ? lightTheme : darkTheme;
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={themeMode}>
       <GlobalStyles />
-      <div className="App">
-        <HashRouter>
-          <Header />
-          <MainRoutes />
-        </HashRouter>
-      </div>
+      <Header theme={theme} toggleTheme={themeToggler}></Header>
+      <MainGrid></MainGrid>
     </ThemeProvider>
   );
 };

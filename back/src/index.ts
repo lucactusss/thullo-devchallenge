@@ -2,7 +2,8 @@ import { configuration } from './configuration';
 import { Context } from './infra/logging/Context';
 import { emoji } from 'node-emoji';
 import HttpServer from './api/httpServer';
-import UserController from './api/controllers/userController';
+import UserController from './api/controllers/user.controller';
+import BoardController from './api/controllers/board.controller';
 
 const PORT = 4003;
 
@@ -24,6 +25,9 @@ process.on('unhandledRejection', (error: Error) => {
   process.exit(1);
 });
 
-const httpServer = new HttpServer([new UserController()], PORT);
+const httpServer = new HttpServer(
+  [new UserController(), new BoardController()],
+  PORT
+);
 
 httpServer.listen(rootContext, emojiToShow);
